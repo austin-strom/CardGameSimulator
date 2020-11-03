@@ -6,4 +6,4 @@ rvm: 2.6.6
 script:
   - bundle exec rake db:test:prepare
   - bundle exec rake spec
-  - bundle exec rake cucumber
+  - bundle exec cucumber
