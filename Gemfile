@@ -27,6 +27,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'omniauth'
 gem 'sinatra'
 
+# Use Travis CI for build pipeline
+gem 'travis'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
