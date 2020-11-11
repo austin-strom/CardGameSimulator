@@ -31,9 +31,3 @@ jobs:
         run: bundle exec rspec
       - name: run cucumber tests
         run: bundle exec cucumber
-      - name: Upload coverage results
-        uses: actions/upload-artifact@master
-        if: always()
-        with:
-          name: coverage-report
-          path: coverage
