@@ -7,7 +7,7 @@ describe PilesController do
       params = {
           pile: {source_pile: nil}
       }
-      post :show, params
+      get piles_show_path, params: params
       expect(response).to redirect_to (piles_pile_homepage_path)
     end
     it 'should render the show page for the source pile' do
@@ -15,7 +15,7 @@ describe PilesController do
       params = {
           pile: {source_pile: "Deck"}
       }
-      post :show, params
+      get piles_show_path, params: params
       expect(response).to render_template('show')
     end
   end

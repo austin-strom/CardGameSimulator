@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe UserSessionsController do
+RSpec.describe 'UserSessions', :type => :request do
   describe 'Login to account' do
     before(:all) do
       User.delete_all
@@ -10,7 +10,7 @@ RSpec.describe UserSessionsController do
       # Valid
       test_params = { user: { password: 'testpass1',
                               email: 'me@you.com' } }
-      post :create, test_params
+      post '/login', params: test_params
       expect(response).to redirect_to(dashboard_path)
 
     end
@@ -18,7 +18,7 @@ RSpec.describe UserSessionsController do
       # Invalid
       test_params = { user: { password: 'testpass0',
                               email: 'me@you.com' } }
-      post :create, test_params
+      post '/login', params: test_params
       expect(response).to redirect_to(login_path)
 
     end
@@ -26,9 +26,9 @@ RSpec.describe UserSessionsController do
       # Valid
       test_params = { user: { password: 'testpass1',
                               email: 'me@you.com' } }
-      post :create, test_params
+      post '/login', params: test_params
       expect(session[:session_token]).to_not be_nil
-      post :destroy
+      post '/logout'
       expect(session[:session_token]).to be_nil
 
     end
