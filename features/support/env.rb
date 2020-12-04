@@ -8,6 +8,28 @@ require 'cucumber/rails'
 require 'rspec/expectations'
 require 'simplecov'
 SimpleCov.start
+
+require 'capybara/poltergeist'
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app, {
+      js_errors: false,
+      # js_errors: true, #setting this to true outputs all my console.logs to Terminal
+      phantomjs_options: ['--ignore-ssl-errors=yes', '--ssl-protocol=any'],
+      debug: false,
+      timeout: 500,
+      phantomjs: File.absolute_path(Phantomjs.path)
+  })
+end
+Capybara.javascript_driver = :poltergeist
+# Capybara.default_driver = :poltergeist
+#
+# Use the following in a Before and After block if you are testing JS
+# Before
+#   Capybara.current_driver = :poltergeist # temporarily select different driver
+# After
+#   Capybara.use_default_driver       # switch back to default driver
+#
+#
 # frozen_string_literal: true
 
 # Capybara defaults to CSS3 selectors rather than XPath.
