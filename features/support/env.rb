@@ -22,6 +22,7 @@ Capybara.register_driver :poltergeist do |app|
 end
 Capybara.javascript_driver = :poltergeist
 # Capybara.default_driver = :poltergeist
+Capybara.server = :webrick
 #
 # Use the following in a Before and After block if you are testing JS
 # Before

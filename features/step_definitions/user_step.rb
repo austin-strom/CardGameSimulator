@@ -1,3 +1,11 @@
+Before do |scenario|
+  User.delete_all
+end
+After do
+  User.delete_all
+  Capybara.use_default_driver
+end
+
 Given /^I am on the "(.*?)" page$/ do |arg1|
   visit new_user_path if arg1.to_s.include? "signup"
 end
@@ -22,6 +30,12 @@ When /^I attempt to login with "(.*?)" and "(.*?)"$/ do |email, pass|
   fill_in 'loginPass', :with => pass
   fill_in 'loginEmail', :with => email
   click_button 'Login to my account'
+end
+
+And /^Javascript is enabled$/ do
+  Capybara.current_driver = :poltergeist
+  visit dashboard_path
+  click_button 'Sign Up/Login'
 end
 
 private
