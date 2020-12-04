@@ -38,9 +38,10 @@ Then /^I should be redirected to the "(.*?)" page$/ do |arg1|
 end
 
 And /^Javascript is enabled$/ do
-  Capybara.current_driver = :poltergeist
+  Capybara.current_driver = Capybara.javascript_driver
   visit dashboard_path
   click_button 'Sign Up/Login'
+  expect(page).to have_content('Dashboard')
 end
 
 And /^I should be able to logout$/ do
