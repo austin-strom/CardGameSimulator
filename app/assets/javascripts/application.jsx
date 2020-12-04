@@ -25,9 +25,12 @@
 // layout file, like app/views/layouts/application.html.erb
 //= require jquery
 //= require_tree .
-import ReactOnRails from 'react-on-rails';
+
+const ReactOnRails = require('react-on-rails');
+//
+// import ReactOnRails from 'react-on-rails';
 import BaseRoom from './components/BaseRoom';
-ReactOnRails.register({
+ReactOnRails.ReactOnRails.register({
     BaseRoom
 });
 
