@@ -1,9 +1,13 @@
 Before do |scenario|
   User.delete_all
+  Capybara.server = :webrick
+
 end
 After do
   User.delete_all
   Capybara.use_default_driver
+  Capybara.server = :puma
+
 end
 
 Given /^I am on the "(.*?)" page$/ do |arg1|
