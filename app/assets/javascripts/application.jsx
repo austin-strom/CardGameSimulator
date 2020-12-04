@@ -26,11 +26,9 @@
 //= require jquery
 //= require_tree .
 
-const ReactOnRails = require('react-on-rails');
-//
-// import ReactOnRails from 'react-on-rails';
+import ReactOnRails from 'react-on-rails';
 import BaseRoom from './components/BaseRoom';
-ReactOnRails.ReactOnRails.register({
+ReactOnRails.register({
     BaseRoom
 });
 
