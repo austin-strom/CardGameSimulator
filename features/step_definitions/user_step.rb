@@ -10,8 +10,20 @@ Given /^I am on the "(.*?)" page$/ do |arg1|
   visit new_user_path if arg1.to_s.include? "signup"
 end
 
+Given /^I have create an account with username "(.*?)", email "(.*?)", and password "(.*?)"$/ do |user_id, email, pass|
+  visit new_user_path
+  fill_out_signup(user_id, email, pass)
+end
+
 When /^I create an account with username "(.*?)", email "(.*?)", and password "(.*?)"$/ do |user_id, email, pass|
   fill_out_signup(user_id, email, pass)
+end
+
+When /^I attempt to login with "(.*?)" and "(.*?)"$/ do |email, pass|
+  x=page.html
+  fill_in 'loginPass', :with => pass
+  fill_in 'loginEmail', :with => email
+  click_button 'Login to my account'
 end
 
 Then /^I should be redirected to the "(.*?)" page$/ do |arg1|
@@ -21,21 +33,16 @@ Then /^I should be redirected to the "(.*?)" page$/ do |arg1|
 
 end
 
-Given /^I have create an account with username "(.*?)", email "(.*?)", and password "(.*?)"$/ do |user_id, email, pass|
-  visit new_user_path
-  fill_out_signup(user_id, email, pass)
-end
-
-When /^I attempt to login with "(.*?)" and "(.*?)"$/ do |email, pass|
-  fill_in 'loginPass', :with => pass
-  fill_in 'loginEmail', :with => email
-  click_button 'Login to my account'
-end
-
 And /^Javascript is enabled$/ do
   Capybara.current_driver = :poltergeist
   visit dashboard_path
   click_button 'Sign Up/Login'
+end
+
+And /^I should be able to logout$/ do
+  click_button 'Logout'
+  expect(page.has_button?('signupLogin')).to be_truthy
+
 end
 
 private
