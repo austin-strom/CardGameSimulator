@@ -9,18 +9,32 @@ require 'rspec/expectations'
 require 'simplecov'
 SimpleCov.start
 
-require 'capybara/poltergeist'
-Capybara.register_driver :poltergeist do |app|
-  Capybara::Poltergeist::Driver.new(app, {
-      js_errors: false,
-      # js_errors: true, #setting this to true outputs all my console.logs to Terminal
-      phantomjs_options: ['--ignore-ssl-errors=yes', '--ssl-protocol=any'],
-      debug: false,
-      timeout: 500,
-      phantomjs: File.absolute_path(Phantomjs.path)
-  })
+# require 'capybara/poltergeist'
+# Capybara.register_driver :poltergeist do |app|
+#   Capybara::Poltergeist::Driver.new(app, {
+#       js_errors: true,
+#       # js_errors: true, #setting this to true outputs all my console.logs to Terminal
+#       phantomjs_options: ['--ignore-ssl-errors=yes', '--ssl-protocol=any'],
+#       debug: false,
+#       timeout: 500,
+#       phantomjs: File.absolute_path(Phantomjs.path)
+#   })
+# end
+require 'capybara/apparition'
+
+Capybara.register_driver :apparition do |app|
+  options = {
+      debug: true ,
+      headless: true,
+      screen_size: [1200, 900],
+      skip_image_loading: true
+  }
+  Capybara::Apparition::Driver.new(app, options)
 end
-Capybara.javascript_driver = :poltergeist
+
+Capybara.javascript_driver = :apparition
+
+
 # Capybara.default_driver = :poltergeist
 #
 # Use the following in a Before and After block if you are testing JS

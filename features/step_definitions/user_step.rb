@@ -1,12 +1,9 @@
 Before do |scenario|
   User.delete_all
-  Capybara.server = :webrick
-
 end
 After do
   User.delete_all
   Capybara.use_default_driver
-  Capybara.server = :puma
 
 end
 
@@ -38,7 +35,6 @@ Then /^I should be redirected to the "(.*?)" page$/ do |arg1|
 end
 
 And /^Javascript is enabled$/ do
-  Capybara.current_driver = Capybara.javascript_driver
   visit dashboard_path
   click_button 'Sign Up/Login'
   expect(page).to have_content('Dashboard')

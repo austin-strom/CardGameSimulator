@@ -15,6 +15,7 @@ gem 'coffee-rails'
 gem 'securerandom'
 
 gem 'actioncable'
+gem 'puma'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -58,8 +59,6 @@ group :development, :test do
   gem 'jasmine-jquery-rails'
   gem 'rspec', '~>3.5'
   gem 'rspec-rails'
-  gem 'phantomjs'
-  gem 'poltergeist'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.3.6'
 
@@ -80,7 +79,7 @@ group :test do
   gem 'database_cleaner'
   gem 'rspec-expectations'
   gem 'rails-controller-testing'
-
+  gem 'apparition'
 end
 
 group :production do
