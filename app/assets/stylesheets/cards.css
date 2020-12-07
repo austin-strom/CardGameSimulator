@@ -22,7 +22,7 @@
     padding: .25em;
     margin: 0 .5em .5em 0;
     text-align: center;
-    font-size: 1.2em; /* @change: adjust this value to make bigger or smaller cards */
+    font-size: 2.5em; /* @change: adjust this value to make bigger or smaller cards */
     font-weight: normal;
     font-family: Arial, sans-serif;
     position: relative;
@@ -325,7 +325,7 @@
 .playingCards.faceImages .card.rank-k,
 .playingCards.faceImages .card.joker {
     background-repeat: no-repeat;
-    background-position: -1em 0;
+    background-position: -1.5em 0;
     /* @change: smaller cards: more negative distance from the left
        bigger cards: 0 or more positive distance from the left */
 
@@ -339,22 +339,22 @@
     */
 }
 
-.playingCards.faceImages .card.rank-j.diams  { background-image: url(../../../../../../../../../Downloads/CSS-Playing-Cards-master/faces/JD.gif); }
-.playingCards.faceImages .card.rank-j.hearts { background-image: url(../../../../../../../../../Downloads/CSS-Playing-Cards-master/faces/JH.gif); }
-.playingCards.faceImages .card.rank-j.spades { background-image: url(../../../../../../../../../Downloads/CSS-Playing-Cards-master/faces/JS.gif); }
-.playingCards.faceImages .card.rank-j.clubs  { background-image: url(../../../../../../../../../Downloads/CSS-Playing-Cards-master/faces/JC.gif); }
+.playingCards.faceImages .card.rank-j.diams  { background-image: url(../images/faces/JD.gif); }
+.playingCards.faceImages .card.rank-j.hearts { background-image: url(../images/faces/JH.gif); }
+.playingCards.faceImages .card.rank-j.spades { background-image: url(../images/faces/JS.gif); }
+.playingCards.faceImages .card.rank-j.clubs  { background-image: url(../images/faces/JC.gif); }
 
-.playingCards.faceImages .card.rank-q.diams  { background-image: url(../../../../../../../../../Downloads/CSS-Playing-Cards-master/faces/QD.gif); }
-.playingCards.faceImages .card.rank-q.hearts { background-image: url(../../../../../../../../../Downloads/CSS-Playing-Cards-master/faces/QH.gif); }
-.playingCards.faceImages .card.rank-q.spades { background-image: url(../../../../../../../../../Downloads/CSS-Playing-Cards-master/faces/QS.gif); }
-.playingCards.faceImages .card.rank-q.clubs  { background-image: url(../../../../../../../../../Downloads/CSS-Playing-Cards-master/faces/QC.gif); }
+.playingCards.faceImages .card.rank-q.diams  { background-image: url(../images/faces/QD.gif); }
+.playingCards.faceImages .card.rank-q.hearts { background-image: url(../images/faces/QH.gif); }
+.playingCards.faceImages .card.rank-q.spades { background-image: url(../images/faces/QS.gif); }
+.playingCards.faceImages .card.rank-q.clubs  { background-image: url(../images/faces/QC.gif); }
 
-.playingCards.faceImages .card.rank-k.diams  { background-image: url(../../../../../../../../../Downloads/CSS-Playing-Cards-master/faces/KD.gif); }
-.playingCards.faceImages .card.rank-k.hearts { background-image: url(../../../../../../../../../Downloads/CSS-Playing-Cards-master/faces/KH.gif); }
-.playingCards.faceImages .card.rank-k.spades { background-image: url(../../../../../../../../../Downloads/CSS-Playing-Cards-master/faces/KS.gif); }
-.playingCards.faceImages .card.rank-k.clubs  { background-image: url(../../../../../../../../../Downloads/CSS-Playing-Cards-master/faces/KC.gif); }
+.playingCards.faceImages .card.rank-k.diams  { background-image: url(../images/faces/KD.gif); }
+.playingCards.faceImages .card.rank-k.hearts { background-image: url(../images/faces/KH.gif); }
+.playingCards.faceImages .card.rank-k.spades { background-image: url(../images/faces/KS.gif); }
+.playingCards.faceImages .card.rank-k.clubs  { background-image: url(../images/faces/KC.gif); }
 
-.playingCards.faceImages .card.joker         { background-image: url(../../../../../../../../../Downloads/CSS-Playing-Cards-master/faces/joker.gif); }
+.playingCards.faceImages .card.joker         { background-image: url(../images/faces/joker.gif); }
 .playingCards.simpleCards .card.rank-j,
 .playingCards.simpleCards .card.rank-q,
 .playingCards.simpleCards .card.rank-k       { background-image: none !important; }
