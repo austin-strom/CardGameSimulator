@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 2020_11_16_221502) do
     t.string "name"
     t.integer "pile_id"
     t.string "unicode_value"
-    t.index ["pile_id"], name: "index_cards_on_pile_id"
   end
 
   create_table "piles", force: :cascade do |t|
