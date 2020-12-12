@@ -97,26 +97,10 @@
   height: 30%;
   width: 100%;
   justify-content: flex-start;
-  //overflow-x:hidden;
-  //overflow-y: scroll;
 }
-//
-//.bottom-center-panel:after{
-//  content: "";
-//  position: absolute;
-//  z-index: 1;
-//  bottom: 0;
-//  left: 0;
-//  pointer-events: none;
-//  background-image : linear-gradient(to bottom,
-//  rgba(255,255,255,0), rgba(255,255,255,1) 90%);
-//  width: 100%;
-//  height: 4em;
-//}
+
 ::-webkit-scrollbar {
   width: 16px;
-  //border: 5px solid white;
-
 }
 
 ::-webkit-scrollbar-thumb {
@@ -192,4 +176,26 @@ $card-idx: 1;
 .break {
   flex-basis: 100%;
   height: 0;
+}
+
+@media screen and (max-width: 800px) {
+  #room-information{
+    display: flex;
+    flex-direction: column;
+    //justify-content: space-between;
+    //padding-left: 10%;
+    //padding-right: 10%;
+  }
+  .base-room {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 80vh;
+  }
+  .piles{
+    flex-direction: row;
+  }
+  .middle-center-panel{
+    flex-direction:column;
+  }
 }
