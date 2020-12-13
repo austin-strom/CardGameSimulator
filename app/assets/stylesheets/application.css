@@ -44,6 +44,9 @@ input[type=text], select {
     box-sizing: border-box;
 }
 
+.form{
+
+}
 input[type=submit] {
     width: 100%;
     background-color: #4CAF50;
@@ -83,4 +86,10 @@ input[type=submit]:hover {
     margin-top: 2%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.padded-form{
+    padding-top: 5%;
+    padding-left: 30%;
+    padding-right: 30%;
 }
